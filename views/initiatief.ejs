@@ -1,0 +1,66 @@
+<%- include('./partials/head', {current: '/initiatief'}); %>
+
+<!-- Detail Section -->
+<section id="detail">
+
+  <% if (hallenData.image) { %>
+    <img src="https://fdnd-agency.directus.app/assets/<%= hallenData.image %>">
+  <% } %>
+  
+  <div class="detailBackdrop"></div>
+
+  <div class="detailContent">
+    <div class="description">
+      <a href="/initiatief/<%= hallenData.id %>"><h1 class="capsLock"><%= hallenData.title %></h1></a>
+
+      <% if (hallenData.start_date) { %>
+        <p>
+          <span><%= hallenData.start_date %>
+          <% if (hallenData.end_date) { %>
+            tot <%= hallenData.end_date %></span>
+          <% } %>
+        </p>
+      <% } %>
+      
+      <p><%- hallenData.long_description %></p>
+    </div>
+  </div>
+
+  <!-- Back Button -->
+  <a href="/">
+    <button class="extraBold" id="terugButton">
+      Terug
+    </button>
+  </a>
+
+  <!-- Scroll Hint Icons -->
+  <div class="scrollIcons">
+    <a href="#detailcontact">
+      <p class="capsLock extraBold">Bekijk contactgegevens</p>
+      <i class='bx bx-mouse'></i>
+      <i class='bx bx-chevron-down'></i>
+    </a>
+  </div>
+
+  <div class="shapeDividerBottom">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+    </svg>
+  </div>
+</section>
+
+<section id="detailcontact">
+  <img src="/images/pfinitiatief.jpg" alt="Profile Picture">
+  <div>
+    <h2 class="capsLock extraBold">Gerda Oosterhuis</h2>
+    <p>Hi! Ik ben Gerda, 23 jaar oud en woon in Amsterdam West. Denk jij de juiste persoon te zijn voor mijn aanvraag? Neem dan zeker even contact met mij op!</p>
+    <a href="#">
+      <button class="extraBold">
+        Neem contact met mij op!
+      </button>
+    </a>
+  </div>
+
+</section>
+
+<%- include('./partials/foot') %>

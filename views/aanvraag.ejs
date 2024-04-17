@@ -1,0 +1,102 @@
+<%- include('./partials/head', {current: '/aanvraag'}); %>
+
+<main>
+
+    <!-- Form to Submit Service -->
+    <section id="submitform">
+
+        <!-- Step 1 -->
+        <form method="post" action="/">
+          <fieldset>
+            <h2>Stap 1<br><span class="capsLock extraBold">Persoonlijke gegevens</span></h2>
+            <label for="Voornaam" class="inputTitle">Voornaam:</label>
+            <input type="text" id="Voornaam" placeholder="Je naam..." required>
+
+            <label for="Achternaam" class="inputTitle">Achternaam:</label>
+            <input type="text" id="Achternaam" placeholder="Je achternaam..." required>
+
+            <label for="E-mailadres" class="inputTitle">E-mailadres:</label>
+            <input type="text" id="E-mailadres" placeholder="Je e-mailadres ..." required>
+          </fieldset>
+
+          <!-- Step 2 -->
+          <fieldset>
+            <h2>Stap 2<br><span class="capsLock extraBold">Soort initiatief</span></h2>
+            <h3 class="inputTitle">Wat voor soort initiatief wilt u aanmaken?</h3>
+            <label for="Vraag">
+                <input type="radio" id="Vraag" name="soortInitiatief" required>
+                Vraag
+            </label>
+            <label for="Aanbod">
+                <input type="radio" id="Aanbod" name="soortInitiatief" required>
+                Aanbod
+            </label>
+            
+            <h3 class="inputTitle">Voor wanneer is het nodig?</h3>
+            <input type="date">
+          </fieldset>
+
+          <!-- Step 3 -->
+          <fieldset>
+            <h2>Stap 3<br><span class="capsLock extraBold">Initiatief omschrijving</span></h2>
+            <label for="Titel" class="inputTitle">Titel:</label>
+            <input type="text" id="Titel" required>
+
+            <label for="Beschrijving" class="inputTitle">Beschrijving:</label>
+            <input type="text" id="Beschrijving" required>
+
+            <label for="Buurt" class="inputTitle">Buurt:</label>
+            <select id="Buurt">
+                <option value="">Buurt West</option>
+                <option value="">Buurt Oost</option>
+                <option value="">Buurt Noord</option>
+            </select>
+
+            <label for="Afbeelding" class="inputTitle">Afbeelding:</label>
+            <input type="file" id="Afbeelding">
+          </fieldset>
+          
+          <!-- Step 4 -->
+          <fieldset>
+            <h2>Stap 4<br><span class="capsLock extraBold">Categorieën</span></h2>  
+            <h3 class="inputTitle">Voeg passende categorieën toe aan je initiatief:</h3>
+            <div class="allCategories">
+              <input type="checkbox" id="Tech">
+              <label for="Tech" class="extraBold">Technologie</label>  
+
+              <input type="checkbox" id="Kunst">
+              <label for="Kunst" class="extraBold">Kunst en Cultuur</label>  
+
+              <input type="checkbox" id="Sport">
+              <label for="Sport" class="extraBold">Sport en Recreatie</label>  
+
+              <input type="checkbox" id="Film">   
+              <label for="Film" class="extraBold">Film en Entertainment</label>  
+
+              <input type="checkbox" id="Dieren">
+              <label for="Dieren" class="extraBold">Dieren en Natuur</label>  
+
+              <input type="checkbox" id="Huis">
+              <label for="Huis" class="extraBold">Huis en Tuin</label>  
+
+              <input type="checkbox" id="Avontuur">
+              <label for="Avontuur" class="extraBold">Avontuur en Ontdekking</label>  
+              
+              <input type="checkbox" id="Milieu">
+              <label for="Milieu" class="extraBold">Milieu en Duurzaamheid</label>
+            </div>
+          </fieldset>   
+
+          <!-- Step 5 -->
+          <fieldset>
+            <h2>Stap 5<br><span class="capsLock extraBold">Initiatief afronden</span></h2>
+            <p class="afrondText">Heb je alle stappen volledig doorlopen? Ben je tevreden met je initiatief? Mooi! Dan kan je hem gaan indienen!</p>
+            <button type="submit" class="extraBold">
+                Aanvraag indienen
+            </button>
+          </fieldset> 
+        </form>
+
+    </section>
+
+</main>

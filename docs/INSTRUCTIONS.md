@@ -1,125 +1,111 @@
-# Enhanced Website
+# Interactive functionality
 
-Ontwerp en maak een website voor een opdrachtgever waarbij je de website verrijkt volgens het principe van progressive enhancement
+Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is.
+
 
 ## Context
-Deze leertaak hoort bij sprint 10 "User Experience". Dit is een leertaak die je individueel of in een team uitvoert voor een opdrachtgever.
 
-In het college S10W1-01-Sprintplanning-User-Experience en de workshop S10W1-03-Layout-Shift wordt de opdracht en de werkwijze uitgelegd.
+Deze leertaak hoort bij sprint 9 "The Web is for Everyone". Dit is een leertaak die je uitvoert voor een opdrachtgever.
+
+In het college S09W1-01-Sprintplanning-The-Web-Is-For-Everyone wordt de opdracht uitgelegd.
+
+Bij deze leertaak hoort de deeltaak:
+- [Wireflow](https://github.com/fdnd-task/wireflow) (Sprint 05)
+- [UML Diagram](https://github.com/fdnd-task/uml-diagram) (Sprint 08)
+- [Progressive Enhancement](https://github.com/fdnd-task/progressive-enhancement)
 
 
 ## Doel van deze opdracht
 
-Je leert hoe je een interactieve website kan ontwerpen en maken die je met client-side scripting kan verrijken.
+Tim Berners-Lee, de uitvinder van het internet zei: "_The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect._"
 
-Met Progressive Enhancement kun je er voor zorgen dat een website het altijd doet. 
-Eerst bouw je de Core Functionality in HTML, zo nodig met server-side rendering. De content layer. Zodat je website het in de meest eenvoudige vorm goed doet.
-Daarna voeg je CSS toe voor de Presentation Layer. 
-Tot slot voeg je extra enhancements toe om de User Experience te verbeteren. 
+Het doel van deze opdracht is te leren hoe je een interactieve website kan ontwerpen en maken die voor iedereen toegankelijk is.
+
 
 ## Werkwijze
 
-Ontwerp en maak een interactieve functionaliteit voor je opdrachtgever. Hiervoor moet je data opslaan met een formulier en POST en ga je client-side de website verrijken met loading states, feedback en success states. 
+Ontwerp en maak een interactieve functionaliteit voor je opdrachtgever op basis van een _user story_. De _user stories_ waar je aan gaat werken gaan over User Generatied Content. Hiervoor moet je data opslaan met een formulier en POST.
 
-Deze opdracht gaat over alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
+
+Voor deze opdracht doorloop je alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
+
 
 ## Analyseren
-In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voeren.
 
-Bijvoorbeeld: grip krijgen op een taak door het inventarisatie van bestaande informatie, analyseren van de feedback die je in de sprint review hebt gekregen, planning, maken van een todo lijst en bepalen van definitions of done.
+In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voeren. Je kiest een _user story_ waar je aan gaat werken en onderzoekt hoe je data gaat posten naar de server.
 
 ### Sprintplanning
 1. Lees de instructies van deze leertaak zorgvuldig door
 2. Bekijk de verschillende fases van de DLC en wat je per fase gaat doen
-3. Bekijk de [planning van sprint 10](https://programma.fdnd.nl/data-driven-web/user-experience) en wat je per week gaat doen
-4. Bespreek met het projectteam wat je aan werk verwacht en maak aantekeningen. (wat komt je bekend voor, wat heb je al vaker gedaan of wat lijkt je lastig)
-5. Bedenk en schets met je projectteam hoe je User Generated Content client-side kan posten met een fetch. 
+3. Bekijk de planning van [sprint 9](https://programma.fdnd.nl/data-driven-web/the-web-is-for-everyone) en wat je per week gaat doen
+4. Bespreek wat je aan werk verwacht en maak aantekeningen. (wat komt je bekend voor, wat heb je al vaker gedaan of wat lijkt je lastig)
+5. Kies een _user story_ over _User Generated Content_ uit de backlog van het project waar je aan gaat werken, of schrijf er zelf een
+6. Schets met je projectcoach per _user story_ hoe je data kan posten en of er (al) een POST endpoint is van de API en hoe deze werkt.
 
+#### Bronnen analyseerfase
+
+* [Wat is een REST API nou echt: het basisidee](https://blog.wearefrank.nl/wat-is-een-rest-api-nou-echt-het-basisidee)
 
 
 ## Ontwerpen
+
 In de ontwerpfase bedenk en schets je eerst wat je gaat maken. 
 
 ### Wireflow
-Teken de interactie voor de _user story_ in een wireflow. Bedenk en schets verschillende states voor het client-side versturen van data, zoals een loading state, error state en succes state.
+Teken de interactie voor de _user story_ in een wireflow. Zorg dat je de verschillende states van het formulier, het versturen van data, een _succes state_ en mogelijke _errors_ ook tekent. 
+
+### Breakdown schets
+Maak een breakdown-schets en beschrijf de juiste HTML formulier-elementen die je nodig hebt. 
 
 ### UML Diagram
-Schets op basis van de wireflow een UML diagram met pseudo-code voor het client-side scripting, en de routing en pseudo-code voor de POST data en control-flow van de node-code. 
+Schets een UML diagram met de routing en pseudo-code voor de POST data en control-flow van de node-code. 
 
 ### Bronnen ontwerpfase
+
 * [Wireframing User Flow with Wireflows](https://balsamiq.com/learn/articles/wireflows/)
 * [What is a UML diagram?](https://miro.com/diagramming/what-is-a-uml-diagram/)
+* [The Input (Form Input) element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input)
 * [The Form element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
-* [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 
-
-
-
-### Bouwen
-In de bouwfase realiseer je de beslissingen uit de ontwerpfase. 
+## Bouwen
 
 ### Inrichten ontwikkelomgeving
-1. Fork deze leertaak en clone het naar je systeem.
-2. Installeer de Node ontwikkelomgeving en installeer de packages die je nodig hebt. Maak de files en folders aan die je nodig hebt op de Node server.
-3. Refactor de code uit sprint 8 en 9 voordat je verder gaat bouwen. Kopieer de code uit voorgaande sprints en refactor je Node en Express, de HTML en CSS:
- 
-#### Node & Express (server.js)
-- Volgorde van routes is hetzelfde als de sitemap
-- GET & POST routes staan bij elkaar
 
-#### HTML (EJS)
-- Volgorde van de HTML elementen is hetzelfde als de pagina structuur
-- Orden de HTML van groot-naar-klein, eerst de container elementen en daarna de geneste elementen
+Je gaat een server-side website bouwen met Node/Express/EJS gebaseerd op een REST API met JSON. Installeer de Node ontwikkelomgeving en installeer de packages die je nodig hebt. Maak de files en folders aan die je nodig hebt op de Node server. Gebruik hiervoor `npm install`, en kopieer uit je project uit de vorige sprint de code die je mee wilt nemen.
 
-#### CSS
-- Volgorde van de CSS komt overeen met de volgorde van de HTML
-- Orden de CSS is van generiek-naar-specifiek, generieke styling staat bovenaan
+### Progressive enhancement
 
-
-#### Progressive Enhancement
-Je werkt volgens het principe van Progressive Enhancement:
-1. Eerst bouw je de core functionality van je website in HTML, met behulp van formulieren en NodeJS, voor het server-side afhandelen van het posten van data. (Content layer)
+1. Eerst bouw je de _core functionality_ van je website in HTML en met behulp van formulieren en NodeJS, voor het server-side afhandelen van het posten van data. (Content layer)
 2. Daarna voeg je CSS toe voor feedback voor de gebruiker en om de huisstijl toe te passen. (Presentation layer)
-3. Daarna voeg je client-side JS toe om de User Experience te verbeteren. (Client-side scripting)
+3. Zo nodig voeg je CSS en client-side JS toe om de User Experience te verbeteren. (Client-side scripting)
 
-#### Performance
-Je breidt deze sprint je code uit verschillende technieken om ervoor te zorgen dat de website een goede  Performance heeft, zoals het voorkomen van layout shifts, toepassen van perceived performance en loading hints aan de browser in HTML, en het toepassen van responsive images.
+#### Bronnen bouwefase
 
-
-#### Bronnen bouwfase
-
-- [Frontend Performance Checklist van Smashing Magazine](https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/).
-- [Frontend Performance Checklist - Assets Optimizations](https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/#assets-optimizations)
-- [Frontend Performance Checklist - Delivery Optimizations](https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/#delivery-optimizations)
+* [Understanding Progressive Enhancement](https://alistapart.com/article/understandingprogressiveenhancement/)
 
 
-
-### Integreren
-In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien en er op verder kan bouwen. 
+## Integreren
+In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien.
 
 Als je helemaal klaar bent en alles lokaal werkt ga je verder met het publiceren van jouw project op internet. Omdat we met Node werken is dit iets ingewikkelder dan voorheen, er moet namelijk een serveromgeving opgestart worden. Wij gebruiken cyclic.sh als hostingpartij maar je mag natuurlijk je eigen voorkeur volgen als die anders is.
 
-### Testen
-In de testfase controleer je of jouw aanpassingen werken zoals bedoeld.
+## Testen
 
-1. Test de performance van jouw project, maak issues aan en documenteer je bevindingen in de wiki.
-2. Test jouw project op meerdere devices en browsers, maak issues aan  en documenteer je bevindingen in de wiki.
-3. Test de toegankelijkheid van jouw project, maak issues aan  en documenteer je bevindingen in de wiki.
-4. Test de bruikbaarheid van jouw project, maak issues aan  en documenteer je bevindingen in de wiki.
+Om er voor te zorgen dat de functionaliteit voor iedereen toegankelijk is, test je je werk in verschillende browsers en devices.
+
+Gebruik [caniuse.com](https://caniuse.com) om te achterhalen welke technieken browsers ondersteunen. 
 
 
 ## Criteria
 *Definitions of done*
 
+
 Deze opdracht is done als:
 
-Je hebt een website ontworpen en gemaakt met Node, Express en EJS en een REST API
+- [ ] Jouw gebruikers kunnen iets achterlaten of toevoegen op jouw website (user generated content)
 - [ ] Je website is online gepubliceerd
-- [ ] Je hebt je proces bijgehouden in de Wiki
-- [ ] Je toont aan dat je in de analysefase verschillende methoden en technieken hebt ingezet om te inventariseren wat er moet gebeuren
-- [ ] Je toont aan dat je in de ontwerpfase verschillende methoden en technieken hebt ingezet die ervoor zorgen dat je precies weet wat je moet bouwen
-- [ ] Je toont aan dat je in de bouwfase verschillende server-side en client-side methoden en technieken hebt ingezet om het ontwerp te realiseren
-- [ ] Je toont aan dat je in de testfase verschillende methoden en technieken hebt ingezet om te testen of jouw website voldoet aan standaarden en gebruiksvriendelijk is
-- [ ] Je hebt client-side Javascript gebruikt om de interface te verrijken
- 
+- [ ] Je hebt gewerkt volgens de verschillende fases van de development-lifecycle en je hebt je proces bijgehouden in de Wiki
+- [ ] Je hebt interactieve functionaliteit ontworpen en gemaakt met Node, Express, EJS en een REST API en HTML, CSS en misschien client-side JS
+- [ ] Je hebt je werk getest in verschillende browsers en devices en de test gedocumenteerd in je wiki
+- [ ] Je hebt in de Readme bij 'Kenmerken' uitgelegd wat Progressive Enhancement is en hoe je dit hebt toegepast

@@ -1,0 +1,174 @@
+<%- include('./partials/head', {current: '/'}); %>
+
+<main>
+
+  <!-- Home Section -->
+  <section id="home">
+
+    <!-- Title -->
+    <div class="titleWrapper">
+      <h1 class="capsLock">
+        Platform Buurtinitiatieven.
+      </h1>
+      <p>
+        Dit platform is gericht naar het aanbieden of aanvragen van diverse buurtinitiatieven. In de meeste gevallen 
+        is het moeilijk om de juiste persoon voor jouw klus te vinden, en daarom is dit platform ontwikkeld!
+      </p>
+    </div>
+
+    <!-- Grey Backdrop behind Title -->
+    <div class="homeBackdrop"></div>
+
+    <!-- Scroll Hint Icons -->
+    <div class="scrollIcons">
+      <a href="#services">
+        <p class="capsLock extraBold">Bekijk Vraag & Aanbod</p>
+        <i class='bx bx-mouse'></i>
+        <i class='bx bx-chevron-down'></i>
+      </a>
+    </div>
+
+    <!-- White Tilted Part -->
+    <div class="shapeDividerBottom">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div>
+      <div>
+        <!-- Title -->
+        <h2 class="capsLock">Bekijk onze initiatieven</h2>
+
+        <!-- Description -->
+        <p class="serviceP">Wij bieden een ruim aanbod aan initiatieven. Ben je op zoek naar een vraag of een aanbod?</p>
+
+        <!-- Service Selectors -->
+        <div class="inputcontainer">
+          <label for="vraag"
+                 class="extraBold">
+                    <input type="radio" 
+                           id="vraag" 
+                           name="soortInitiatief"
+                           onclick="showList(1)">
+                 <p>Vraag</p>
+          </label>
+          <label for="aanbod"
+                 class="extraBold">
+                    <input type="radio" 
+                           id="aanbod" 
+                           name="soortInitiatief"
+                           onclick="showList(2)">
+                 <p>Aanbod</p>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Service Lists -->
+    <div>
+      <!-- No Service Selected -->
+      <p id="listError">Er zijn nog geen initiatieven geselecteerd.</p>
+
+      <!-- 'Vraag' Service Selected -->
+      <ul id="listVraag">
+        <% hallenData.forEach(function(database) { %>
+          <% if (database.type == 'vraag' ) { %>
+            <li class="activityItem">
+              <% if (database.image) { %>
+                <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
+              <% } %>
+  
+              <div class="description">
+                <a href="/initiatief/<%= database.id %>"><h3 class="capsLock"><%= database.title %></h3></a>
+  
+                <% if (database.start_date) { %>
+                  <p>
+                    <span class="descriptionDate">
+                      <%= database.start_date %>
+                    <% if (database.end_date) { %>
+                      tot <%= database.end_date %>
+                    </span>
+                    <% } %>
+                  </p>
+                <% } %>
+                
+                <p class="descriptionText"><%- database.short_description %></p>
+              </div>
+  
+              <a href="/initiatief/<%= database.id %>"><button class="extraBold">Meer informatie</button></a>
+            </li>
+          <% } %>
+        <% }) %>
+      </ul>
+
+      <!-- 'Aanbod' Service Selected -->
+      <ul id="listAanbod">
+        <% hallenData.forEach(function(database) { %>
+          <% if (database.type == 'aanbod' ) { %>
+            <li class="activityItem">
+              <% if (database.image) { %>
+                <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
+              <% } %>
+  
+              <div class="description">
+                <a href="/initiatief/<%= database.id %>"><h3 class="capsLock"><%= database.title %></h3></a>
+  
+                <% if (database.start_date) { %>
+                  <p>
+                    <span><%= database.start_date %>
+                    <% if (database.end_date) { %>
+                      tot <%= database.end_date %></span>
+                    <% } %>
+                  </p>
+                <% } %>
+                
+                <p><%- database.short_description %></p>
+              </div>
+  
+              <a href="/initiatief/<%= database.id %>"><button class="extraBold">Meer informatie</button></a>
+            </li>
+          <% } %>
+        <% }) %>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Submit Service Section -->
+  <section id="submitservice">
+
+    <!-- White Tilted Part -->
+    <div class="shapeDividerTop">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+      </svg>
+    </div>
+
+    <!-- Grey Backdrop behind Title -->
+    <div class="submitBackdrop"></div>
+
+    <div id="submitContent">
+      <!-- Title -->
+      <h2 class="capsLock">Of vraag zelf een initiatief aan!</h2>
+      
+      <!-- Description -->
+      <p>
+        Op zoek naar een balonnenclown? DJ voor een huisfeest? Het maakt niet uit wat! Vul dan het 
+        formulier in, en wie weet vind je de juiste persoon waar jij naar op zoek bent.
+      </p>  
+
+      <!-- Submit Service Button -->
+      <a href="/aanvraag">
+        <button class="extraBold">
+          Naar formulier
+        </button>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<%- include('./partials/foot') %>
