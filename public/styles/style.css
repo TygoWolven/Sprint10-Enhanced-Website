@@ -145,15 +145,15 @@ h1,
 
 .navigation {
     display: flex;
+}
 
-    & li {
-        margin: 0 0.5em;
-        padding: 1.5em;
+.navigation li {
+    margin: 0 0.5em;
+    padding: 1.5em;
+}
 
-        & a {
-            padding: 1em;
-        }
-    }
+.navigation li a {
+    padding: 1em;
 }
 
 /* === All Page Sections === */
@@ -209,10 +209,10 @@ section {
 #home {
     background: url("/images/dehallen-min.png");
     background-position: -50%;
+}
 
-    & p {
-        max-width: 80ch;
-    }
+#home p {
+    max-width: 80ch;
 }
 
 .titleWrapper {
@@ -234,26 +234,26 @@ section {
     position: absolute;
     bottom: 25px;
     z-index: 100;
+}
 
-    & a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.scrollIcons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    & p {
-        margin-bottom: 0.5em;
-    }
+.scrollIcons p {
+    margin-bottom: 0.5em;
+}
 
-    & i:first-of-type {
-        animation: mouseHop 1s infinite;
-    }
+.scrollIcons i:first-of-type {
+    animation: mouseHop 1s infinite;
+}
 
-    & i:last-of-type {
-        position: relative;
-        bottom: 10px;
-        animation: chevronHop 1s infinite;
-    }
+.scrollIcons i:last-of-type {
+    position: relative;
+    bottom: 10px;
+    animation: chevronHop 1s infinite;
 }
 
 @keyframes mouseHop {
@@ -294,11 +294,11 @@ section {
     position: relative;
     align-items: center;
     justify-content: center;
-    
-    & .serviceP {
-        max-width: 37ch;
-        margin: 0.5em 0;
-    }
+}
+
+.serviceP {
+    max-width: 37ch;
+    margin: 0.5em 0;
 }
 
 .inputcontainer {
@@ -307,18 +307,7 @@ section {
     width: 100%;
     
     & label {
-        position: relative;
-        margin: 1em 1em 0 0;
-        padding: 0.75em 3em;
 
-        text-align: center;
-        overflow: hidden;
-        cursor: pointer;  
-
-
-        color: var(--white);
-        background: var(--green);
-        transition: var(--tran1);
 
         & p {
             color: var(--white);
@@ -343,6 +332,21 @@ section {
     & input {
         display: none;
     }
+}
+
+.inputcontainer label {
+    position: relative;
+    margin: 1em 1em 0 0;
+    padding: 0.75em 3em;
+
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;  
+
+
+    color: var(--white);
+    background: var(--green);
+    transition: var(--tran1);
 }
 
 /* === Each Service Item === */
