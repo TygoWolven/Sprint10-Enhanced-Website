@@ -4,6 +4,8 @@ import express from 'express'
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
 
+const baseUrl = 'https://fdnd-agency.directus.app/'
+
 // Maak een nieuwe express app aan
 const app = express()
 
@@ -69,6 +71,29 @@ app.post('/', function (request, response) {
 	messages.push(request.body.bericht)
 	
 	response.redirect(303, '/')
+  })
+
+// Als we vanuit de browser een POST doen op de detailpagina van een persoon
+app.post('/initiatief/:id', function (request, response) {
+	// Stap 1: Haal de huidige data op, zodat we altijd up-to-date zijn, en niks weggooien van anderen
+  
+	// Haal eerst de huidige gegevens voor dit board op, uit de WHOIS API
+	fetchJson(`${baseUrl}items/dh_services/${request.params.id}`).then(({ data }) => {
+	  // Stap 2: Sla de nieuwe data op in de API
+	  // Voeg de nieuwe lijst messages toe in de WHOIS API, via een PATCH request
+	  fetch(`${baseUrl}items/dh_services/${request.params.id}`, {
+		method: 'PATCH',
+		body: JSON.stringify({
+		  likes: data.likes + 1,
+		}),
+		headers: {
+		  'Content-type': 'application/json; charset=UTF-8',
+		},
+	  }).then((patchResponse) => {
+		// Redirect naar de persoon pagina
+		response.redirect(303, '/initiatief/' + request.params.id)
+	  })
+	})
   })
 
 // Poortnummer voor de LocalHost
