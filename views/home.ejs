@@ -81,7 +81,8 @@
               <div class="activityImage">
                 <% if (database.image) { %>
                   <picture>
-                    <source srcset="https://fdnd-agency.directus.app/assets/<%= database.image %>format=webp" type="webp">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= database.image %>?format=avif" type="avif">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= database.image %>?format=webp" type="webp">
                     <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
                   </picture>
                 <% } %>
@@ -121,7 +122,8 @@
             <li class="activityItem">
               <% if (database.image) { %>
                 <picture>
-                  <source srcset="https://fdnd-agency.directus.app/assets/<%= database.image %>format=webp" type="webp">
+                  <source srcset="https://fdnd-agency.directus.app/assets/<%= database.image %>?format=avif" type="avif">
+                  <source srcset="https://fdnd-agency.directus.app/assets/<%= database.image %>?format=webp" type="webp">
                   <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
                 </picture>
               <% } %>
