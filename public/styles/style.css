@@ -249,13 +249,13 @@ section {
     margin-bottom: 0.5em;
 }
 
-.scrollIcons i:first-of-type {
+.scrollIcons svg:first-of-type {
     animation: mouseHop 1s infinite;
 }
 
-.scrollIcons i:last-of-type {
+.scrollIcons svg:last-of-type {
     position: relative;
-    bottom: 10px;
+    bottom: 3px;
     animation: chevronHop 1s infinite;
 }
 
