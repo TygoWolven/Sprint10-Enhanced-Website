@@ -66,11 +66,6 @@ app.get('/faq', function(request, response) {
 	})
 })
 
-// FETCH Routes voor alle pagina's
-fetch('https://fdnd-agency.directus.app/items/dh_services').then(response => {
-
-})
-
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
 	likes.push(request.body.like)

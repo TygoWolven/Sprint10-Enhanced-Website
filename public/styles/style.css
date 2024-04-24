@@ -454,9 +454,11 @@ section {
 /* === Submit Form Section === */
 #submitservice {
     background-image: url('/images/de-kleine-hallen.png');
-    /* background-image: image-set(
-        url('/images/de-kleine-hallen.webp') type('image/webp')
-    ); */
+    background-image: image-set(
+        url('/images/de-kleine-hallen.webp') type('image/webp'),
+        url('/images/de-kleine-hallen.png') type('image/png'),
+
+    );
     background-size: 70%;   
     height: 80vh;
 }
