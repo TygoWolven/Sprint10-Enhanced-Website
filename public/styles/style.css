@@ -354,17 +354,7 @@ section {
     position: relative;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: var(--tran1);
-
-    display: grid;
-    grid-template-areas: 
-    "img title"
-    "img date"
-    "img description"
-    "img moreinfo";
-}
-
-.activityItem h3 {
-    grid-area: title;
+    display: flex;
 }
 
 .activityItem img {
@@ -372,11 +362,9 @@ section {
     width: 10em;
     object-fit: cover;
     margin: 0.5em 0 0.5em 0.5em;
-    grid-area: img;
 }
 
 .activityItem button {
-    grid-area: moreinfo;
     position: absolute;
     bottom: 0.5em;
     width: 90%;
@@ -391,12 +379,11 @@ section {
     margin: 0.5em 0;
 }
 
-.descriptionDate {
-    grid-area: date;
-}
-
-.descriptionText {
-    grid-area: description;
+/* === Like Button on Service === */
+.likeBtn {
+    width: 10px;
+    height: 10px;
+    background: red;
 }
 
 /* === Service Lists === */

@@ -78,12 +78,18 @@
         <% hallenData.forEach(function(database) { %>
           <% if (database.type == 'vraag' ) { %>
             <li class="activityItem">
-              <% if (database.image) { %>
-                <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
-              <% } %>
+              <div class="activityImage">
+                <% if (database.image) { %>
+                  <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
+                <% } %>
+              </div>
   
               <div class="description">
                 <a href="/initiatief/<%= database.id %>"><h3 class="capsLock"><%= database.title %></h3></a>
+
+                <!-- <form method="post" action="/" class="likeForm">
+                  <button type="submit" class="likeBtn" name="like">Vind ik leuk</button>
+                </form> -->
   
                 <% if (database.start_date) { %>
                   <p>
@@ -97,9 +103,9 @@
                 <% } %>
                 
                 <p class="descriptionText"><%- database.short_description %></p>
+
+                <a href="/initiatief/<%= database.id %>"><button class="extraBold">Meer informatie</button></a>
               </div>
-  
-              <a href="/initiatief/<%= database.id %>"><button class="extraBold">Meer informatie</button></a>
             </li>
           <% } %>
         <% }) %>

@@ -20,14 +20,14 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 
 // Deze Array verzamelt berichten
-const messages = [] 
+const likes = [] 
 
 // GET Routes voor alle pagina's 
 app.get('/', function(request, response) {
 	fetchJson('https://fdnd-agency.directus.app/items/dh_services').then((HallenDataUitDeAPI) => {
 		response.render('home', {
 			hallenData: HallenDataUitDeAPI.data,
-			messages: messages
+			likes: likes
 		})
 	})
 })
@@ -64,9 +64,14 @@ app.get('/faq', function(request, response) {
 	})
 })
 
+// FETCH Routes voor alle pagina's
+fetch('https://fdnd-agency.directus.app/items/dh_services').then(response => {
+
+})
+
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
-	messages.push(request.body.bericht)
+	likes.push(request.body.like)
 	
 	response.redirect(303, '/')
   })
