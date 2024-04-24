@@ -210,7 +210,6 @@ section {
     background-image: url("/images/de-hallen.png");
     background-image: image-set(
         url('/images/de-hallen.webp') type('image/webp')
-        url('/images/de-hallen.png') type('image/png')
     );
     background-position: -50%;
 }
@@ -456,9 +455,7 @@ section {
 #submitservice {
     background-image: url('/images/de-kleine-hallen.png');
     background-image: image-set(
-        url('/images/de-kleine-hallen.webp') type('image/webp'),
-        url('/images/de-kleine-hallen.png') type('image/png'), 
-
+        url('/images/de-kleine-hallen.webp') type('image/webp')
     );
     background-size: 70%;   
     height: 80vh;

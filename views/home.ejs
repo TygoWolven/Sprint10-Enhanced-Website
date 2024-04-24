@@ -80,7 +80,10 @@
             <li class="activityItem">
               <div class="activityImage">
                 <% if (database.image) { %>
-                  <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
+                  <picture>
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= database.image %>format=webp" type="webp">
+                    <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
+                  </picture>
                 <% } %>
               </div>
   
@@ -117,7 +120,10 @@
           <% if (database.type == 'aanbod' ) { %>
             <li class="activityItem">
               <% if (database.image) { %>
-                <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
+                <picture>
+                  <source srcset="https://fdnd-agency.directus.app/assets/<%= database.image %>format=webp" type="webp">
+                  <img src="https://fdnd-agency.directus.app/assets/<%= database.image %>" alt="Afbeelding voor het initiatief">
+                </picture>
               <% } %>
   
               <div class="description">
