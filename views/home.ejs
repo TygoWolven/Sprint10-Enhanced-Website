@@ -104,6 +104,8 @@
                 
                 <p><%= database.short_description.length > 125 ? database.short_description.slice(0, 125) + '...' : database.short_description %></p>
               </div>
+
+              <a href="/initiatief/<%= database.id %>"><button class="extraBold">Meer informatie</button></a>
             </li>
           <% } %>
         <% }) %>
