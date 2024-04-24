@@ -287,6 +287,8 @@ section {
     grid-template-columns: 1fr;
     background: var(--white);
     z-index: 50;
+    min-height: 100vh;
+    height: fit-content;
 }
 
 #services > div:first-child {
@@ -393,6 +395,7 @@ section {
     display: none;
     overflow: scroll;
     justify-content: center;
+    flex-wrap: wrap;
 }
 #listError {
     text-align: center;
@@ -445,7 +448,7 @@ section {
     width: 125px;
 }
 
-/* === Submit Service Section === */
+/* === Submit Form Section === */
 #submitservice {
     background: url("/images/dekleinehallen.png");
     background-size: 70%;   

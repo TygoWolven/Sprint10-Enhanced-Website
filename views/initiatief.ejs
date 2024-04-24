@@ -23,6 +23,11 @@
       <% } %>
       
       <p><%- hallenData.long_description %></p>
+
+      <form class="like" action="/initiatief/<%= hallenData.id %>" method="post">
+        <input type="hidden" name="actie" value="like" />
+        <button type="submit"><span class="likes"><%= hallenData.likes %></span> <span>likes</span></button>
+      </form>
     </div>
   </div>
 

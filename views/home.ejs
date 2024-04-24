@@ -85,11 +85,11 @@
               </div>
   
               <div class="description">
-                <a href="/initiatief/<%= database.id %>"><h3 class="capsLock"><%= database.title %></h3></a>
+                <a href="/initiatief/<%= database.id %>">
+                  <h3 class="capsLock"><%= database.title.length > 22 ? database.title.slice(0, 22) + '...' : database.title %></h3>
+                </a>
 
-                <!-- <form method="post" action="/" class="likeForm">
-                  <button type="submit" class="likeBtn" name="like">Vind ik leuk</button>
-                </form> -->
+                <span><%= database.likes %></span> <span>likes</span>
   
                 <% if (database.start_date) { %>
                   <p>
@@ -102,9 +102,7 @@
                   </p>
                 <% } %>
                 
-                <p class="descriptionText"><%- database.short_description %></p>
-
-                <a href="/initiatief/<%= database.id %>"><button class="extraBold">Meer informatie</button></a>
+                <p><%= database.short_description.length > 125 ? database.short_description.slice(0, 125) + '...' : database.short_description %></p>
               </div>
             </li>
           <% } %>
@@ -121,7 +119,13 @@
               <% } %>
   
               <div class="description">
-                <a href="/initiatief/<%= database.id %>"><h3 class="capsLock"><%= database.title %></h3></a>
+                <a href="/initiatief/<%= database.id %>">
+                  <h3 class="capsLock">
+                    <%= database.title.length > 22 ? database.title.slice(0, 22) + '...' : database.title %>
+                  </h3>
+                </a>
+
+                <span><%= database.likes %></span> <span>likes</span>
   
                 <% if (database.start_date) { %>
                   <p>
@@ -132,7 +136,7 @@
                   </p>
                 <% } %>
                 
-                <p><%- database.short_description %></p>
+                <p><%= database.short_description.length > 125 ? database.short_description.slice(0, 125) + '...' : database.short_description %></p>
               </div>
   
               <a href="/initiatief/<%= database.id %>"><button class="extraBold">Meer informatie</button></a>
