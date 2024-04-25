@@ -7,19 +7,13 @@
 /* === Custom Properties === */
 :root {
     /* === Colors === */
-    --black: #151515;
+    --black: rgb(15, 15, 15);
     --green: rgb(110, 110, 85);
     --red: rgb(150, 100, 80);
 
     --white: #EEEEEE;
     --lightgrey: #DBDBDB;
     --grey: #BDBDBD;
-
-    /* === Padding & Margin === */
-    --padding: 8px 16px;
-
-    /* === Borders === */
-    --round: 500px;
 
     /* === Transitions === */
     --tran1: 0.25s ease;
@@ -35,26 +29,11 @@
     text-transform: uppercase;
 }
 
-.textArea {
-    max-width: 47ch;
-}
-
-.backBtn {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-}
-
 .inputTitle {
     font-size: 16px;
     font-weight: bold;
     margin-top: 2em;
     margin-bottom: 0.5em;
-}
-
-/* === General Element Styling === */
-i {
-    font-size: 2em;
 }
 
 /* === Buttons === */
@@ -71,7 +50,7 @@ button {
     font-size: 16px;
 }
 
-/* === Buttons Pseudo to Animate === */
+/* === Buttons Pseudo-Element to Animate === */
 button::before {
     position: absolute;
     content: "";
@@ -590,12 +569,6 @@ details p {
     padding: 2em;
 }
 
-details i {
-    font-size: 2em;
-    transition: var(--tran1);
-    margin-right: 0.5em;
-}
-
 details[open] summary {
     background: var(--white);
     border: 3px solid var(--white);
@@ -603,10 +576,6 @@ details[open] summary {
 
 details[open] p {
     background: var(--white);
-}
-
-details[open] i {
-    transform: rotate(45deg);
 }
 
 /* === Footer === */
@@ -640,9 +609,8 @@ footer h3 {
     color: var(--green);
 }
 
-/* === All Hover-States === */
 a:hover,
-i:hover {
+svg:hover {
     color: var(--green);
 }
 
@@ -659,9 +627,8 @@ button:hover::before {
     right: 10%;
 }
 
-/* === All Transitions === */
 a, 
-i {
+svg {
     transition: var(--tran1);
 }
 
