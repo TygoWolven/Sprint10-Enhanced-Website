@@ -20,6 +20,24 @@
     --tran2: 0.5s ease;
 }
 
+/* === General Page Styling === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: var(--black);
+
+    font-family: Roboto;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* === Hiding all Scrollbars === */
+*::-webkit-scrollbar {
+    display: none;
+}
+
 /* === General Classes === */
 .extraBold {
     font-weight: 900;
@@ -32,6 +50,7 @@
 .inputTitle {
     font-size: 16px;
     font-weight: bold;
+
     margin-top: 2em;
     margin-bottom: 0.5em;
 }
@@ -39,29 +58,34 @@
 /* === Buttons === */
 button {
     position: relative;
-    background: var(--green);
+    overflow: hidden;
     border: none;
+    z-index: 50;
+
     width: 100%;
+    font-size: 16px;
+
     padding: 0.75em;
     margin-top: 1em;
-    overflow: hidden;
+
     color: var(--white);
-    z-index: 50;
-    font-size: 16px;
+    background: var(--green);
 }
 
 /* === Buttons Pseudo-Element to Animate === */
 button::before {
     position: absolute;
     content: "";
+    z-index: -20;
+
     top: 0;
     right: 90%;
     width: 110%;
     height: 100%;
+
     background: var(--red);
     transform: skew(15deg);
     transition: var(--tran2);
-    z-index: -20;
 }
 
 /* === Text Gradient Animation === */
@@ -89,24 +113,6 @@ h1,
     100% {
         background-position: 0% 50%;
     }
-}
-
-/* === General Page Styling === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    color: var(--black);
-
-    font-family: Roboto;
-    text-decoration: none;
-    list-style: none;
-}
-
-/* === Hiding all Scrollbars === */
-*::-webkit-scrollbar {
-    display: none;
 }
 
 /* === Navigation === */
@@ -159,10 +165,11 @@ section {
 .shapeDividerBottom,
 .shapeDividerTop {
     position: absolute;
+    overflow: hidden;
+
     top: 0;
     left: 0;
     width: 100%;
-    overflow: hidden;
     line-height: 0;
 }
 
