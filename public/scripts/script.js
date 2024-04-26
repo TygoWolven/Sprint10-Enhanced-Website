@@ -1,4 +1,4 @@
-// Function for 'Initiatieven'
+// Functie voor de 'Initiatieven'
 const listVraag = document.getElementById('listVraag'),
       listAanbod = document.getElementById('listAanbod'),
       listError = document.getElementById('listError');

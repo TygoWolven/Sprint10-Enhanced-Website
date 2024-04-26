@@ -25,7 +25,7 @@ const baseUrl = 'https://fdnd-agency.directus.app/'
 // Deze Array verzamelt likes
 const likes = [] 
 
-// GET Routes voor alle pagina's 
+// GET Route voor de homepagina
 app.get('/', function(request, response) {
 	fetchJson('https://fdnd-agency.directus.app/items/dh_services').then((HallenDataUitDeAPI) => {
 		response.render('home', {
@@ -35,13 +35,14 @@ app.get('/', function(request, response) {
 	})
 })
 
-// Maak een POST route voor de index
+// POST Route voor de homepagina
 app.post('/', function (request, response) {
 	likes.push(request.body.like)
 	
 	response.redirect(303, '/')
 })
 
+// GET Route voor de initiatiefpagina
 app.get('/initiatief/:initiatief', function(request, response) {
 	fetchJson('https://fdnd-agency.directus.app/items/dh_services?filter={"id":' + request.params.initiatief + '}').then((HallenDataUitDeAPI) => {
 		response.render('initiatief', {
@@ -50,14 +51,9 @@ app.get('/initiatief/:initiatief', function(request, response) {
 	})
 })
 
-// Als we vanuit de browser een POST doen op de detailpagina van een persoon
+// POST Route voor de initiatiefpagina
 app.post('/initiatief/:id', function (request, response) {
-	// Stap 1: Haal de huidige data op, zodat we altijd up-to-date zijn, en niks weggooien van anderen
-  
-	// Haal eerst de huidige gegevens voor dit board op, uit de WHOIS API
 	fetchJson(`${baseUrl}items/dh_services/${request.params.id}`).then(({ data }) => {
-	  // Stap 2: Sla de nieuwe data op in de API
-	  // Voeg de nieuwe lijst messages toe in de WHOIS API, via een PATCH request
 	  fetch(`${baseUrl}items/dh_services/${request.params.id}`, {
 		method: 'PATCH',
 		body: JSON.stringify({
@@ -67,12 +63,12 @@ app.post('/initiatief/:id', function (request, response) {
 		  'Content-type': 'application/json; charset=UTF-8',
 		},
 	  }).then((patchResponse) => {
-		// Redirect naar de persoon pagina
 		response.redirect(303, '/initiatief/' + request.params.id)
 	  })
    })
 })
 
+// GET Route voor de aanvraagpagina
 app.get('/aanvraag', function(request, response) {
 	fetchJson('https://fdnd-agency.directus.app/items/dh_services').then((HallenDataUitDeAPI) => {
 		response.render('aanvraag', {
@@ -81,6 +77,7 @@ app.get('/aanvraag', function(request, response) {
 	})
 })
 
+// GET Route voor de contactpagina
 app.get('/contact', function(request, response) {
 	fetchJson('https://fdnd-agency.directus.app/items/dh_services').then((HallenDataUitDeAPI) => {
 		response.render('contact', {
@@ -89,6 +86,7 @@ app.get('/contact', function(request, response) {
 	})
 })
 
+// GET Route voor de FAQ pagina
 app.get('/faq', function(request, response) {
 	fetchJson('https://fdnd-agency.directus.app/items/dh_services').then((HallenDataUitDeAPI) => {
 		response.render('faq', {
