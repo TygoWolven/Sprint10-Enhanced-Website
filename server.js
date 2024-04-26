@@ -4,8 +4,9 @@ import express from 'express'
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
 
-// Maak een nieuwe express app aan
 const app = express()
+const baseUrl = 'https://fdnd-agency.directus.app/'
+const likes = [] 
 
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
@@ -18,12 +19,6 @@ app.use(express.static('public'))
 
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({extended: true}))
-
-// Deze const zorgt voor een verkort gebruik van de Database URL
-const baseUrl = 'https://fdnd-agency.directus.app/'
-
-// Deze Array verzamelt likes
-const likes = [] 
 
 // GET Route voor de homepagina
 app.get('/', function(request, response) {
