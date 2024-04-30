@@ -269,6 +269,53 @@ section {
     }
 }
 
+.likePopup {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 150;
+
+    padding: 1em 2em;
+    background: var(--white);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transform: translateY(150%);
+    animation-delay: 5s;
+    animation: popupLike 2s forwards;
+}
+
+.likePopup form {
+    padding: 0;
+}
+
+.likePopup > button {
+    margin-bottom: 1em;
+}
+
+@keyframes popupLike {
+    0% {
+        transform: translateY (-150%);
+    }
+    80% {
+        transform: translateY (-150%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.closePopup {
+    animation: closePopup 2s forwards;
+}
+
+@keyframes closePopup {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY (-150%);
+    }
+}
+
 /* === Services Section === */
 #services {
     display: grid;

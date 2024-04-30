@@ -23,11 +23,6 @@
       <% } %>
       
       <p><%- hallenData.long_description %></p>
-
-      <form class="like" action="/initiatief/<%= hallenData.id %>" method="post">
-        <input type="hidden" name="actie" value="like" />
-        <button type="submit"><span class="likes"><%= hallenData.likes %></span> <span>likes</span></button>
-      </form>
     </div>
   </div>
 
@@ -49,6 +44,16 @@
         <path d="M6 9L12 15L18 9" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
+  </div>
+
+  <div class="likePopup">
+    <h3>Vind je dit initiatief nuttig?</h3>
+    <form class="like" action="/initiatief/<%= hallenData.id %>" method="post">
+      <input type="hidden" name="actie" value="like" />
+      <button type="submit" class="extraBold" id="answerYes">Ja</button>
+    </form>
+    <button class="extraBold" id="answerNo">Nee</button>
+    <span class="likes"><%= hallenData.likes %> mensen vonden het nuttig</span>
   </div>
 
   <div class="shapeDividerBottom">

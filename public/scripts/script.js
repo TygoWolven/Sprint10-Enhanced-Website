@@ -1,7 +1,7 @@
 // Functie voor de 'Initiatieven'
 const listVraag = document.getElementById('listVraag'),
       listAanbod = document.getElementById('listAanbod'),
-      listError = document.getElementById('listError');
+      listError = document.getElementById('listError')
 
 function showList(val) {
     if(val==1) {
@@ -13,4 +13,13 @@ function showList(val) {
         listAanbod.style.display='flex'
         listError.style.display='none'
     }
+}
+
+const likePopup = document.querySelector('.likePopup'),
+      answerYes = document.getElementById('answerYes'),
+      answerNo = document.getElementById('answerNo')
+
+answerNo.addEventListener('click', closePopup)
+function closePopup() {
+    likePopup.classList.add('closePopup')
 }
