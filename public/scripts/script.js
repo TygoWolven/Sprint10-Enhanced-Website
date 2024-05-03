@@ -1,3 +1,13 @@
+// Progressiebalk op Homepagina
+window.onscroll = function() {updateProgressBar()};
+
+function updateProgressBar() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
 // Functie voor de 'Initiatieven'
 const listVraag = document.getElementById('listVraag'),
       listAanbod = document.getElementById('listAanbod'),
@@ -15,6 +25,7 @@ function showList(val) {
     }
 }
 
+// Functie voor de Like Popup
 const likePopup = document.querySelector('.likePopup'),
       answerYes = document.getElementById('answerYes'),
       answerNo = document.getElementById('answerNo')
