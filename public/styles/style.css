@@ -447,13 +447,10 @@ section {
 #listVraag,
 #listAanbod {
     width: 100%;
-    display: none;
+    display: flex;
     overflow: scroll;
     justify-content: center;
     flex-wrap: wrap;
-}
-#listError {
-    text-align: center;
 }
 
 /* === Service Detail Section === */
