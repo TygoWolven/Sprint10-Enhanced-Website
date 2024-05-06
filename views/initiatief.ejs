@@ -27,10 +27,8 @@
   </div>
 
   <!-- Back Button -->
-  <a href="/">
-    <button class="extraBold" id="terugButton">
-      Terug
-    </button>
+  <a href="/" class="extraBold">
+    Terug
   </a>
 
   <!-- Scroll Hint Icons -->
@@ -53,7 +51,7 @@
       <button type="submit" class="extraBold" id="answerYes">Ja</button>
     </form>
     <button class="extraBold" id="answerNo">Nee</button>
-    <span class="likes"><%= hallenData.likes %></span> <span>mensen vonden het nuttig</span>
+    <%- include('partials/likes') %> <span>mensen vonden het nuttig</span>
   </div>
 
   <div class="shapeDividerBottom">

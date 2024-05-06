@@ -58,7 +58,11 @@ app.post('/initiatief/:id', function (request, response) {
 		  'Content-type': 'application/json; charset=UTF-8',
 		},
 	  }).then((patchResponse) => {
-		response.redirect(303, '/initiatief/' + request.params.id)
+		if (request.body.enhanced) {
+			response.render('partials/likes', {hallenData: {likes: data.likes + 1}})
+		} else {
+			response.redirect(303, '/initiatief/' + request.params.id)
+		}
 	  })
    })
 })
