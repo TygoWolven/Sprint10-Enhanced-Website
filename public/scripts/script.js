@@ -1,9 +1,31 @@
-// Selecteer alle bestelformulieren
+// Progressiebalk op Homepagina
+window.onscroll = function() {updateProgressBar()};
+
+function updateProgressBar() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+// Functie voor de 'Initiatieven'
+const listVraag = document.getElementById('listVraag'),
+      listAanbod = document.getElementById('listAanbod')
+
+function showList(val) {
+    if(val==1) {
+        listVraag.style.display='flex'
+        listAanbod.style.display='none'
+    } if(val==2) {
+        listVraag.style.display='none'
+        listAanbod.style.display='flex'
+    }
+}
+
+// Custom Post afhandeling Like Button
 let form = document.querySelector('form.like')
 
-// Luister naar het submit event
 form.addEventListener('submit', function(event) {
-
 	// Het this object refereert hier naar het formulier zelf
 
 	// Lees de data van het formulier in
@@ -36,18 +58,13 @@ form.addEventListener('submit', function(event) {
 
 	}).then(function(responseHTML) {
 		// En de HTML kunnen we gebruiken om onze DOM aan te passen
-
-		//document.querySelector('body').innerHTML = responseHTML
-		//console.log(responseHTML)
   
 		// Het is gelukt, neem de waarde uit de span en tel er een bij op
 		document.querySelector('.likes').outerHTML = responseHTML
 
 		// En hier kun je bijvoorbeeld nog wat extra's doen om duidelijker te maken
 		// dat er iets gebeurd is op de pagina
-		
 
-		// Een eventuele loading state haal je hier ook weer weg
 	});
 
 	// Als alles gelukt is, voorkom dan de submit van de browser zelf
@@ -58,39 +75,15 @@ form.addEventListener('submit', function(event) {
 	event.preventDefault()
 })
 
-
-
-
-
-
-// Progressiebalk op Homepagina
-window.onscroll = function() {updateProgressBar()};
-
-function updateProgressBar() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
-}
-
-// Functie voor de 'Initiatieven'
-const listVraag = document.getElementById('listVraag'),
-      listAanbod = document.getElementById('listAanbod')
-
-function showList(val) {
-    if(val==1) {
-        listVraag.style.display='flex'
-        listAanbod.style.display='none'
-    } if(val==2) {
-        listVraag.style.display='none'
-        listAanbod.style.display='flex'
-    }
-}
-
 // Functie voor de Like Popup
 const likePopup = document.querySelector('.likePopup'),
       answerYes = document.getElementById('answerYes'),
       answerNo = document.getElementById('answerNo')
+
+// answerYes.addEventListener('click', closePopup)
+// function closePopup() {	  
+
+// }
 
 answerNo.addEventListener('click', closePopup)
 function closePopup() {
