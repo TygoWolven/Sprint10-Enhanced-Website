@@ -60,7 +60,13 @@ form.addEventListener('submit', function(event) {
 		// En de HTML kunnen we gebruiken om onze DOM aan te passen
   
 		// Het is gelukt, neem de waarde uit de span en tel er een bij op
-		document.querySelector('.likes').outerHTML = responseHTML
+		if (document.startViewTransition) {
+			document.startViewTransition(function() {
+				document.querySelector('.likes').outerHTML = responseHTML
+			})
+		} else {
+			document.querySelector('.likes').outerHTML = responseHTML
+		}
 
 		// En hier kun je bijvoorbeeld nog wat extra's doen om duidelijker te maken
 		// dat er iets gebeurd is op de pagina

@@ -125,7 +125,7 @@ h1,
 }
 
 .progress-bar {
-    height: 50px;
+    height: 5em;
     background-image: linear-gradient(
         to right,
         var(--red),
@@ -286,6 +286,10 @@ section {
     100% {
         transform: translateY(0);
     }
+}
+
+.likes {
+    view-transition-name: morph;
 }
 
 .likePopup {
