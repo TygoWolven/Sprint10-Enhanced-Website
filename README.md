@@ -1,4 +1,4 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in:
+np> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in:
 > https://github.com/fdnd-task/user-experience-enhanced-website/blob/main/docs/INSTRUCTIONS.md
 
 # Titel
@@ -32,3 +32,25 @@ Je kan aan dit project verder werken door het te forken, en vervolgens te clonen
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
